@@ -37,9 +37,15 @@ void draw() {
   popMatrix();
   
   pushMatrix();
+  rogue();
+  popMatrix();
+  
+  pushMatrix();
   earth();
   moon();
   popMatrix();
+  
+  
 
   earthAngle += PI/1000;
   moonAngle += PI/100;
@@ -94,4 +100,14 @@ void rotate(float x, float y, float z) {
   rotateX(x % 2*PI);
   rotateY(y % 2*PI);
   rotateZ(z % 2*PI);
+}
+
+void rogue(){ //need to delete
+  beginShape();
+  rotate(0.5*moonAngle,moonAngle, 0);
+  fill(162, 168, 174);
+  stroke(255);
+  translate(0, 0, size/4);
+  sphere(venusSize);
+  endShape();
 }
